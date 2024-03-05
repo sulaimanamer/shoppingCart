@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Docker Deploy To Container') {
+            steps {
+                script {
+                    withDockerRegistry(credentialsId: 'c0388cad-125a-4feb-8d59-d3c73a858507', toolName: 'docker') {
+                        bat "docker run -d --name shopping-cart -p 8070:8070 sulaimanamer/shopping:latest"
+                    }
+                }
+            }
+        }
+    }
+}

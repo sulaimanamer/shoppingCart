@@ -1,0 +1,9 @@
+OWASP Format Step for Jenkins Pipeline
+
+dependencyCheck additionalArguments: '', odcInstallation: 'DP-check'
+                    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+------------------------------------------------------------------------------------------------------------
+Configured format-
+
+dependencyCheck additionalArguments: ' --scan ./', odcInstallation: 'DP'
+                    dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
